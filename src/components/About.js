@@ -19,15 +19,14 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="bg-dragon-black-700 rounded-2xl p-8 border-2 border-dragon-blue-500/30 shadow-2xl">
-              <h3 className="text-2xl font-bold text-dragon-blue-400 mb-4">Mi Pasión</h3>
+              <h3 className="text-2xl font-bold text-dragon-blue-400 mb-4">Sobre Mi</h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                Soy un apasionado desarrollador de juegos con experiencia en crear experiencias 
-                interactivas únicas. Mi enfoque combina creatividad artística con sólidos 
-                fundamentos técnicos para dar vida a ideas innovadoras.
+                Soy un diseñador y desarrollador de videojuegos apasioanado por crear experiencias divertidas
+                para todos los jugadores. Tengo una buena formacion en desarrollo de videojuegos con algunos ejemplos
+                de mi trabajo en mi portafolio.
               </p>
               <p className="text-gray-300 text-lg leading-relaxed">
-                Cuando no estoy programando, me encanta explorar nuevas tecnologías, 
-                participar en game jams y contribuir a la comunidad de desarrollo de juegos.
+                Cuando no estoy programando, me encanta crear mundos e historias que enamoren a los jugadores.
               </p>
             </div>
           </div>

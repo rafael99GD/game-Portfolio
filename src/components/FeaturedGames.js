@@ -20,32 +20,6 @@ const FeaturedGames = () => {
             <GameCard key={game.id} game={game} />
           ))}
         </div>
-
-        {/* Sección para agregar nuevos juegos fácilmente */}
-        <div className="mt-16 text-center">
-          <div className="bg-dragon-black-800 rounded-2xl p-8 border-2 border-dashed border-dragon-blue-500/30">
-            <h3 className="text-2xl font-bold text-dragon-blue-400 mb-4">
-              ¿Más proyectos en camino?
-            </h3>
-            <p className="text-gray-400 mb-6">
-              Para agregar nuevos juegos, simplemente edita el archivo <code className="bg-dragon-black-700 px-2 py-1 rounded">gamesData.js</code>
-            </p>
-            <div className="bg-dragon-black-700 rounded-lg p-4 text-left max-w-2xl mx-auto">
-              <code className="text-sm text-gray-300">
-                {`{
-  id: 4,
-  title: "Nuevo Juego",
-  description: "Descripción del juego...",
-  image: "/images/nuevo-juego.jpg",
-  video: "/videos/nuevo-juego.mp4",
-  githubUrl: "https://github.com/tu-usuario/nuevo-juego",
-  technologies: ["Unity", "C#", "etc."],
-  featured: true
-}`}
-              </code>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

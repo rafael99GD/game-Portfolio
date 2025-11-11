@@ -25,7 +25,7 @@ const Footer = () => {
               <FaGithub size={20} />
             </a>
             <a 
-              href="https://linkedin.com/in/tu-perfil" 
+              href="https://www.linkedin.com/in/rafael99gd/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-dragon-blue-600 hover:bg-dragon-blue-500 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
@@ -33,7 +33,7 @@ const Footer = () => {
               <FaLinkedin size={20} />
             </a>
             <a 
-              href="mailto:tu-email@ejemplo.com" 
+              href="mailto:rafaelsanchezfernandez12@gmail.com" 
               className="bg-dragon-blue-600 hover:bg-dragon-blue-500 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
             >
               <FaEnvelope size={20} />
@@ -44,10 +44,7 @@ const Footer = () => {
             <p className="text-gray-400 flex items-center justify-center space-x-2">
               <span>Hecho con</span>
               <FaHeart className="text-red-500 animate-pulse" />
-              <span>por RafaelGD</span>
-            </p>
-            <p className="text-gray-500 text-sm mt-2">
-              Inspirado en el mundo de Cómo entrenar a tu dragón
+              <span>por rafaelGD</span>
             </p>
           </div>
         </div>

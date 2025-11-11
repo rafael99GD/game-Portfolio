@@ -9,7 +9,7 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             <FaGamepad className="text-dragon-blue-400 text-2xl animate-pulse" />
             <h1 className="dragon-font text-2xl font-bold text-dragon-blue-400">
-              RafaelGD
+              rafael99GD
             </h1>
           </div>
           
@@ -35,7 +35,7 @@ const Header = () => {
               <FaGithub size={24} />
             </a>
             <a 
-              href="https://linkedin.com/in/tu-perfil" 
+              href="https://www.linkedin.com/in/rafael99gd/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-white hover:text-dragon-blue-400 transition-colors duration-300"

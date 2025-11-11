@@ -12,14 +12,24 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4">
         <div className="mb-8">
           <div className="w-48 h-48 mx-auto mb-6 rounded-full border-4 border-dragon-blue-500 shadow-2xl animate-glow overflow-hidden">
-            {/* Aquí va tu imagen - reemplaza con tu foto */}
-            <div className="w-full h-full bg-dragon-blue-800 flex items-center justify-center">
-              <span className="text-white text-sm">Tu Foto Aquí</span>
+            {/* Tu foto de perfil */}
+            <img 
+              src={process.env.PUBLIC_URL + "/images/profile.png"} 
+              alt="Rafael GD"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.nextSibling.style.display = 'flex';
+              }}
+            />
+            {/* Fallback si la imagen no carga */}
+            <div className="w-full h-full bg-dragon-blue-800 flex items-center justify-center hidden">
+              <span className="text-white text-sm">Foto de Perfil</span>
             </div>
           </div>
           
           <h1 className="dragon-font text-5xl md:text-7xl font-bold text-white mb-4">
-            Rafael
+            rafael99
             <span className="text-dragon-blue-400 animate-pulse">GD</span>
           </h1>
           
