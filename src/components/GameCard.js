@@ -1,34 +1,26 @@
 import React, { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaImage, FaPlay } from 'react-icons/fa';
 import ModalVideo from './ModalVideo';
+import ReactPlayer from 'react-player';
 
 const GameCard = ({ game }) => {
   const [imageError, setImageError] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [videoError, setVideoError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleImageError = () => {
-    console.log(`Error loading image: ${game.image}`);
     setImageError(true);
   };
 
-  const handleVideoError = () => {
-    console.log(`Error loading video: ${game.video}`);
-    setVideoError(true);
-  };
-
-  const handleVideoLoad = () => {
-    console.log(`Video loaded successfully: ${game.video}`);
+  // ReactPlayer maneja sus propios errores, simplificamos esto
+  const handleVideoReady = () => {
     setIsVideoLoaded(true);
   };
 
-  const shouldShowVideo = game.video && showVideo && isVideoLoaded && !videoError;
-
   const openModal = (e) => {
     e.stopPropagation();
-    if (game.video && !videoError) {
+    if (game.video) {
       setIsModalOpen(true);
     }
   };
@@ -43,83 +35,69 @@ const GameCard = ({ game }) => {
         
         {/* Media Container */}
         <div 
-          className="relative h-48 bg-dragon-black-800 overflow-hidden cursor-pointer"
-          onMouseEnter={() => game.video && !videoError && setShowVideo(true)}
+          className="relative h-48 bg-dragon-black-800 overflow-hidden cursor-pointer group"
+          onMouseEnter={() => setShowVideo(true)}
           onMouseLeave={() => setShowVideo(false)}
         >
-          {/* Video preview en hover */}
-          {shouldShowVideo ? (
-            <div className="relative w-full h-full">
-              <video
-                src={game.video}
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-                onError={handleVideoError}
-                onLoadedData={handleVideoLoad}
-              />
-            </div>
+          {/* SOLUCIÓN: 
+             Ponemos el ReactPlayer "detrás" o sustituyendo la imagen.
+             YouTube no permite "preload" real como un MP4, así que el hover puede tardar un poco.
+          */}
+          
+          {showVideo && game.video ? (
+             <div className="absolute inset-0 w-full h-full bg-black">
+                <ReactPlayer
+                  url={game.video}
+                  playing={true}      // Se reproduce al hacer hover
+                  muted={true}        // Obligatorio para autoplay en navegadores
+                  loop={true}
+                  width="100%"
+                  height="100%"
+                  controls={false}
+                  onReady={handleVideoReady}
+                  config={{
+                    youtube: {
+                      playerVars: { showinfo: 0, controls: 0, modestbranding: 1 }
+                    }
+                  }}
+                />
+             </div>
           ) : (
-            /* Imagen normal */
-            <>
+            /* Imagen estática (Cover) */
+            <div className="relative w-full h-full">
               {!imageError ? (
-                <div className="relative w-full h-full">
-                  <img 
-                    src={game.image} 
-                    alt={game.title}
-                    className="w-full h-full object-cover"
-                    onError={handleImageError}
-                  />
-                  {/* Solo el indicador pequeño en la esquina cuando NO hay hover */}
-                  {game.video && !videoError && !showVideo && (
-                    <div className="absolute top-3 right-3 bg-dragon-blue-600 rounded-full p-2 shadow-lg">
-                      <FaPlay className="text-white text-xs" />
-                    </div>
-                  )}
-                </div>
+                <img 
+                  src={game.image} 
+                  alt={game.title}
+                  className="w-full h-full object-cover"
+                  onError={handleImageError}
+                />
               ) : (
                 <div className="w-full h-full bg-dragon-blue-900 flex flex-col items-center justify-center">
                   <FaImage className="text-dragon-blue-400 text-4xl mb-2" />
                   <span className="text-dragon-blue-300 text-sm">Imagen no encontrada</span>
                 </div>
               )}
-            </>
+              
+              {/* Icono pequeño en la esquina */}
+              {game.video && (
+                <div className="absolute top-3 right-3 bg-dragon-blue-600 rounded-full p-2 shadow-lg z-10">
+                  <FaPlay className="text-white text-xs" />
+                </div>
+              )}
+            </div>
           )}
 
-          {/* Video oculto para preload */}
-          {game.video && !videoError && (
-            <video
-              src={game.video}
-              muted
-              playsInline
-              preload="metadata"
-              onLoadedData={handleVideoLoad}
-              onError={handleVideoError}
-              className="hidden"
-            />
-          )}
-          
-          {/* Overlay SOLO cuando hay hover - Aquí va el único botón circular */}
+          {/* Overlay y Botón central (aparece en hover sobre el video o la imagen) */}
           <div 
-            className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+            className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20"
             onClick={openModal}
           >
-            <div className="text-center">
-              {game.video && !videoError ? (
-                <>
-                  {/* Único botón circular grande */}
-                  <div className="bg-dragon-blue-600 hover:bg-dragon-blue-500 rounded-full p-5 mb-3 mx-auto transition-all duration-300 transform hover:scale-110 border-2 border-white/30 shadow-2xl">
-                    <FaPlay className="text-white text-2xl ml-1" />
-                  </div>
-                  <span className="text-white font-semibold text-lg">Ver Video</span>
-                </>
-              ) : (
-                <>
-                  <FaExternalLinkAlt className="text-dragon-blue-400 text-2xl mx-auto mb-2" />
-                  <span className="text-white font-semibold">Ver Detalles</span>
-                </>
-              )}
+            <div className="text-center transform scale-90 group-hover:scale-100 transition-transform duration-300">
+               <div className="bg-dragon-blue-600 hover:bg-dragon-blue-500 rounded-full p-5 mb-3 mx-auto border-2 border-white/30 shadow-2xl cursor-pointer">
+                 <FaPlay className="text-white text-2xl ml-1" />
+               </div>
+               <span className="text-white font-semibold text-lg drop-shadow-md">Ver Video Completo</span>
             </div>
           </div>
         </div>
@@ -127,7 +105,7 @@ const GameCard = ({ game }) => {
         {/* Content */}
         <div className="p-6">
           <h3 className="text-xl font-bold text-white mb-3 dragon-font">{game.title}</h3>
-          <p className="text-gray-300 mb-4 leading-relaxed">{game.description}</p>
+          <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">{game.description}</p>
           
           <div className="flex flex-wrap gap-2 mb-6">
             {game.technologies.map((tech, index) => (
@@ -140,7 +118,6 @@ const GameCard = ({ game }) => {
             ))}
           </div>
 
-          {/* Solo un botón para el repositorio */}
           <div className="flex justify-center">
             <a
               href={game.githubUrl}

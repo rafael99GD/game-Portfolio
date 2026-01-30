@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import ReactPlayer from 'react-player';
 
 const ModalVideo = ({ isOpen, onClose, videoUrl, title }) => {
   useEffect(() => {
@@ -51,15 +52,20 @@ const ModalVideo = ({ isOpen, onClose, videoUrl, title }) => {
         {/* Video Container */}
         <div className="p-4">
           <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
-            <video
-              src={videoUrl}
-              controls
-              autoPlay
-              muted={false}
-              className="w-full h-full object-contain"
-            >
-              Tu navegador no soporta el elemento de video.
-            </video>
+            {/* 2. REEMPLAZAMOS LA ETIQUETA VIDEO POR REACTPLAYER */}
+            <ReactPlayer
+              url={videoUrl}
+              width="100%"
+              height="100%"
+              controls={true}   // Mostramos controles (play/pausa/volumen)
+              playing={true}    // Autoplay al abrir
+              muted={false}     // Con sonido (ya que el usuario decidió abrir el video)
+              config={{
+                youtube: {
+                  playerVars: { showinfo: 1 }
+                }
+              }}
+            />
           </div>
         </div>
 
