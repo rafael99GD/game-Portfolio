@@ -1,41 +1,15 @@
 {
   "files": {
-    "main.css": "/game-Portfolio/static/css/main.7e719947.css",
-    "main.js": "/game-Portfolio/static/js/main.1fe641ac.js",
-    "reactPlayerHls.js": "/game-Portfolio/static/js/reactPlayerHls.ef931a9b.chunk.js",
-    "reactPlayerDash.js": "/game-Portfolio/static/js/reactPlayerDash.4f029f37.chunk.js",
-    "reactPlayerMux.js": "/game-Portfolio/static/js/reactPlayerMux.ea29082e.chunk.js",
-    "reactPlayerYouTube.js": "/game-Portfolio/static/js/reactPlayerYouTube.d924d2ce.chunk.js",
-    "reactPlayerVimeo.js": "/game-Portfolio/static/js/reactPlayerVimeo.30dfcd95.chunk.js",
-    "reactPlayerWistia.js": "/game-Portfolio/static/js/reactPlayerWistia.2cb05135.chunk.js",
-    "reactPlayerSpotify.js": "/game-Portfolio/static/js/reactPlayerSpotify.a6c609f1.chunk.js",
-    "reactPlayerTwitch.js": "/game-Portfolio/static/js/reactPlayerTwitch.35a57475.chunk.js",
-    "reactPlayerTiktok.js": "/game-Portfolio/static/js/reactPlayerTiktok.a629213d.chunk.js",
-    "reactPlayerPreview.js": "/game-Portfolio/static/js/reactPlayerPreview.e6f477a3.chunk.js",
+    "main.css": "/game-Portfolio/static/css/main.0c1c503f.css",
+    "main.js": "/game-Portfolio/static/js/main.55f817e3.js",
     "static/js/453.33cb46be.chunk.js": "/game-Portfolio/static/js/453.33cb46be.chunk.js",
-    "static/js/416.cf9245cb.chunk.js": "/game-Portfolio/static/js/416.cf9245cb.chunk.js",
-    "static/js/70.81004b9b.chunk.js": "/game-Portfolio/static/js/70.81004b9b.chunk.js",
-    "static/js/788.c281ba13.chunk.js": "/game-Portfolio/static/js/788.c281ba13.chunk.js",
     "index.html": "/game-Portfolio/index.html",
-    "main.7e719947.css.map": "/game-Portfolio/static/css/main.7e719947.css.map",
-    "main.1fe641ac.js.map": "/game-Portfolio/static/js/main.1fe641ac.js.map",
-    "reactPlayerHls.ef931a9b.chunk.js.map": "/game-Portfolio/static/js/reactPlayerHls.ef931a9b.chunk.js.map",
-    "reactPlayerDash.4f029f37.chunk.js.map": "/game-Portfolio/static/js/reactPlayerDash.4f029f37.chunk.js.map",
-    "reactPlayerMux.ea29082e.chunk.js.map": "/game-Portfolio/static/js/reactPlayerMux.ea29082e.chunk.js.map",
-    "reactPlayerYouTube.d924d2ce.chunk.js.map": "/game-Portfolio/static/js/reactPlayerYouTube.d924d2ce.chunk.js.map",
-    "reactPlayerVimeo.30dfcd95.chunk.js.map": "/game-Portfolio/static/js/reactPlayerVimeo.30dfcd95.chunk.js.map",
-    "reactPlayerWistia.2cb05135.chunk.js.map": "/game-Portfolio/static/js/reactPlayerWistia.2cb05135.chunk.js.map",
-    "reactPlayerSpotify.a6c609f1.chunk.js.map": "/game-Portfolio/static/js/reactPlayerSpotify.a6c609f1.chunk.js.map",
-    "reactPlayerTwitch.35a57475.chunk.js.map": "/game-Portfolio/static/js/reactPlayerTwitch.35a57475.chunk.js.map",
-    "reactPlayerTiktok.a629213d.chunk.js.map": "/game-Portfolio/static/js/reactPlayerTiktok.a629213d.chunk.js.map",
-    "reactPlayerPreview.e6f477a3.chunk.js.map": "/game-Portfolio/static/js/reactPlayerPreview.e6f477a3.chunk.js.map",
-    "453.33cb46be.chunk.js.map": "/game-Portfolio/static/js/453.33cb46be.chunk.js.map",
-    "416.cf9245cb.chunk.js.map": "/game-Portfolio/static/js/416.cf9245cb.chunk.js.map",
-    "70.81004b9b.chunk.js.map": "/game-Portfolio/static/js/70.81004b9b.chunk.js.map",
-    "788.c281ba13.chunk.js.map": "/game-Portfolio/static/js/788.c281ba13.chunk.js.map"
+    "main.0c1c503f.css.map": "/game-Portfolio/static/css/main.0c1c503f.css.map",
+    "main.55f817e3.js.map": "/game-Portfolio/static/js/main.55f817e3.js.map",
+    "453.33cb46be.chunk.js.map": "/game-Portfolio/static/js/453.33cb46be.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e719947.css",
-    "static/js/main.1fe641ac.js"
+    "static/css/main.0c1c503f.css",
+    "static/js/main.55f817e3.js"
   ]
 }
