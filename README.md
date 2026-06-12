@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# 🎮 Portfolio — Rafael Sánchez Fernández
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio personal de Game Developer & Software Engineer.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📁 Estructura de archivos
 
-### `npm start`
+```
+portfolio/
+├── index.html          ← Página principal (no tocar salvo datos personales)
+├── css/
+│   └── style.css       ← Todos los estilos visuales
+├── js/
+│   ├── games.js        ← ⭐ AQUÍ EDITAS TUS JUEGOS
+│   └── main.js         ← Lógica de la web (no tocar)
+└── assets/             ← Pon aquí tus imágenes y vídeos
+    └── videos/         ← Vídeos .mp4 si no usas YouTube
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✏️ Cómo añadir o editar un juego
 
-### `npm test`
+Abre **`js/games.js`** y modifica el array `GAMES`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cada juego tiene esta forma:
 
-### `npm run build`
+```javascript
+{
+  title: "Nombre del Juego",
+  emoji: "🎮",
+  tags: ["Unity", "C#", "VR"],
+  description: "Descripción breve del juego en 2-3 frases.",
+  image: "assets/mi-imagen.jpg",     // o "" si no tienes imagen
+  github: "https://github.com/tu-usuario/tu-repo",
+  video: "https://www.youtube.com/watch?v=XXXXXX",  // o "" si no hay vídeo
+},
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para **añadir un juego nuevo**, copia el bloque de plantilla que está al final del archivo y cambia los datos. ¡Eso es todo!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Sobre las imágenes
+- Coloca los archivos en `/assets/` (ej: `assets/fireball.jpg`)
+- Formatos recomendados: `.jpg` o `.webp` (mejor rendimiento)
+- Tamaño ideal: **1280×720px** (ratio 16:9)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Sobre los vídeos
+- **YouTube** (recomendado): pega la URL normal del vídeo, la web la convierte automáticamente
+  ```
+  video: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  ```
+- **Archivo propio**: sube el `.mp4` a `assets/videos/` y referencia la ruta
+  ```
+  video: "assets/videos/mi-juego-demo.mp4"
+  ```
+- **Sin vídeo**: deja `video: ""` y la tarjeta no abrirá modal al hacer clic
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Deploy en GitHub Pages
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Crea un repositorio en GitHub (nombre sugerido: `portfolio` o `dev-portfolio`)
+2. Sube todos los archivos a la rama `main`
+3. Ve a **Settings → Pages**
+4. En "Source", selecciona `Deploy from a branch`
+5. Elige la rama `main` y carpeta `/ (root)`
+6. Guarda y espera 1-2 minutos
+7. Tu web estará en: `https://tu-usuario.github.io/portfolio/`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔧 Personalización rápida
 
-## Learn More
+### Cambiar foto de perfil
+En `index.html`, busca la línea con `src="https://media.licdn.com..."` y reemplaza la URL por la ruta de tu foto local: `assets/foto.jpg`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Cambiar datos de contacto / links
+Busca en `index.html` la sección `<!-- CONTACTO -->` y actualiza las URLs de LinkedIn, GitHub y email.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Cambiar estadísticas del hero
+En `index.html`, busca los bloques `.stat-box` y actualiza los números y etiquetas.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🌐 Tecnologías usadas
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- HTML5, CSS3, JavaScript vanilla
+- Sin dependencias ni frameworks — carga rápida en cualquier hosting
+- Google Fonts (Space Grotesk + Inter)
+- Compatible con todos los navegadores modernos
