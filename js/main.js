@@ -5,14 +5,14 @@
 // ═══════════════════════════════════════════
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderGames();
+  applyTranslations(false); // primer render: con animación de scroll
   initNav();
   initModal();
   initScrollReveal();
 });
 
 // ── RENDER DE JUEGOS ────────────────────────
-function renderGames() {
+function renderGames(isRerender = false) {
   const grid = document.getElementById("games-grid");
   if (!grid || typeof GAMES === "undefined") return;
 
@@ -20,32 +20,42 @@ function renderGames() {
     const hasVideo = game.video && game.video.trim() !== "";
     const hasGithub = game.github && game.github.trim() !== "";
     const tagsHTML = game.tags
-      .map(t => `<span class="tag">${t}</span>`)
+      .map(tag => `<span class="tag">${tag}</span>`)
       .join("");
 
     const imageBg = game.image
       ? `style="background-image: url('${game.image}')"`
       : "";
 
+    const desc = (currentLang === "en" && game.description_en)
+      ? game.description_en
+      : game.description;
+
+    const btnDemo   = t("games.btn.demo");
+    const btnGithub = t("games.btn.github");
+
+    // En re-render por idioma las tarjetas ya son visibles (sin animación)
+    const revealClass = isRerender ? "reveal revealed" : "reveal";
+
     return `
-      <article class="game-card reveal" data-index="${i}"
+      <article class="game-card ${revealClass}" data-index="${i}"
                ${hasVideo ? `data-video="${game.video}" role="button" tabindex="0" aria-label="Ver demo de ${game.title}"` : ""}>
         <div class="card-img ${!game.image ? "card-img--placeholder" : ""}" ${imageBg}>
           ${!game.image ? `<span class="placeholder-emoji">${game.emoji || "🎮"}</span>` : ""}
-          ${hasVideo ? `<div class="play-hint"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Ver demo</div>` : ""}
+          ${hasVideo ? `<div class="play-hint"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> ${btnDemo}</div>` : ""}
         </div>
         <div class="card-body">
           <h3 class="card-title">${game.emoji ? game.emoji + " " : ""}${game.title}</h3>
           <div class="card-tags">${tagsHTML}</div>
-          <p class="card-desc">${game.description}</p>
+          <p class="card-desc">${desc}</p>
           <div class="card-actions">
             ${hasVideo ? `<button class="btn btn--play" data-video="${game.video}" data-title="${game.title}">
               <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8 5v14l11-7z"/></svg>
-              Ver demo
+              ${btnDemo}
             </button>` : ""}
             ${hasGithub ? `<a href="${game.github}" target="_blank" rel="noopener" class="btn btn--ghost">
               <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-              GitHub
+              ${btnGithub}
             </a>` : ""}
           </div>
         </div>

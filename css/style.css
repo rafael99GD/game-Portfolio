@@ -105,6 +105,25 @@ ul { list-style: none; }
 }
 .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
 
+.lang-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 14px;
+  font-size: 14px; font-weight: 600;
+  color: var(--text-mid);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  line-height: 1;
+  vertical-align: middle;
+}
+.lang-btn:hover {
+  border-color: var(--accent2);
+  color: var(--accent2);
+  background: rgba(0,212,170,0.06);
+}
+
 #nav-burger {
   display: none;
   flex-direction: column; gap: 5px;
