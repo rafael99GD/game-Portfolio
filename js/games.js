@@ -24,6 +24,17 @@
 const GAMES = [
 
   {
+    title: "CS2 Map Quiz",
+    emoji: "🎯",
+    tags: ["JavaScript", "HTML/CSS", "JSON", "GitHub Pages"],
+    description:    "Quiz interactivo para aprender los nombres de cada zona de los mapas de CS2. Elige un mapa, identifica el lugar en la captura y selecciona entre 4 opciones. Muestra precisión, tiempo total y los puntos fallados al terminar.",
+    description_en: "Interactive quiz to learn the callout names of every CS2 map location. Pick a map, identify the spot from a screenshot and choose from 4 options. Displays accuracy, total time and missed locations at the end.",
+    image:  "assets/cs2_map_quiz.png",
+    github: "https://github.com/rafael99GD/game-cs2-quiz",
+    video:  "",
+  },
+
+  {
     title: "Fireball",
     emoji: "🔮",
     tags: ["Unity", "C#", "VR/XR", "Físicas"],
