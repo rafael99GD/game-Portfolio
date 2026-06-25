@@ -24,6 +24,28 @@
 const GAMES = [
 
   {
+    title: "PVAV Exam — AI Combat",
+    emoji: "🤖",
+    tags: ["Unreal Engine 5", "Blueprints", "Behavior Trees", "AI Perception"],
+    description:    "Proyecto de examen en UE5 con Blueprints. El jugador debe atravesar dos zonas hostiles: una con un bot lanzagranadas que persigue al player, y otra con un bot disparador y una torreta giratoria con láser. Un partner de IA sigue al jugador y activa la plataforma elevadora al detectar el pulsador de presión. Sistema completo de HUD, interacciones y menú final.",
+    description_en: "UE5 exam project built with Blueprints. The player must cross two hostile zones: one with a grenade-throwing bot that pursues the player, and another with a shooting bot and a rotating laser turret. An AI partner follows the player and activates the elevator platform upon reaching the pressure plate. Full HUD, interaction prompts and end-game menu included.",
+    image:  "assets/examenue5_preview.png",
+    github: "https://github.com/rafael99GD/game-ExamenUE5",
+    video:  "assets/videos/ExamenFinalUE5.mp4",
+  },
+
+  {
+    title: "Boss Rush",
+    emoji: "🔥",
+    tags: ["Unreal Engine 5", "Blueprints"],
+    description:    "Bullet hell de combate contra un boss único desarrollado en UE5 con Blueprints. El boss lanza barreras de bolas de fuego con huecos para esquivar y balas rojas que puedes destruir con la espada. Cada vez que baja su vida cambia de posición y aumenta la velocidad y cadencia de los proyectiles. La partida se reinicia automáticamente al ganar o perder.",
+    description_en: "Single-boss bullet hell built in UE5 with Blueprints. The boss fires fire-ball barriers with gaps to dodge through and red bullets that can be destroyed with your sword. Each time its health drops it repositions and ramps up projectile speed and fire rate. The run restarts automatically on both win and loss.",
+    image:  "assets/bullethellboss_preview.png",
+    github: "https://github.com/rafael99GD/game-BulletHellUE5",
+    video:  "assets/videos/BulletHellBoss.mp4",
+  },
+
+  {
     title: "CS2 Map Quiz",
     emoji: "🎯",
     tags: ["JavaScript", "HTML/CSS", "JSON", "GitHub Pages"],
