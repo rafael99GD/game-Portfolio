@@ -24,6 +24,17 @@
 const GAMES = [
 
   {
+    title: "Buzz! Virtual Controller",
+    emoji: "🔴",
+    tags: ["Python", "WebSockets", "Android · Kotlin", "XInput"],
+    description: "Herramienta que convierte cualquier smartphone en un pulsador Buzz! virtual para jugar a los clásicos de PS2 en el emulador PCSX2, sin necesidad del mando USB original. El servidor en Python recibe los toques por WebSocket desde hasta 4 móviles conectados por WiFi local y los traduce en mandos Xbox virtuales (XInput) que PCSX2 detecta automáticamente. Incluye una app nativa para Android (Kotlin, Jetpack Compose) y una versión web de un solo archivo compatible con iOS y cualquier navegador, para que cada jugador elija cómo unirse a la partida.",
+    description_en: "Tool that turns any smartphone into a virtual Buzz! buzzer to play the classic PS2 party games on the PCSX2 emulator, with no need for the original USB controller. A Python server receives touch input over WebSockets from up to 4 phones connected over local WiFi and translates it into virtual Xbox controllers (XInput) that PCSX2 detects automatically. Includes a native Android app (Kotlin, Jetpack Compose) and a single-file web version compatible with iOS and any browser, so each player can pick how they join the game.",
+    image: "assets/BuzzVirtualController.png",
+    github: "https://github.com/rafael99GD/game-BuzzVirtualController",
+    video: "",
+  },
+
+  {
     title: "PVAV Exam — AI Combat",
     emoji: "🤖",
     tags: ["Unreal Engine 5", "Blueprints", "Behavior Trees", "AI Perception"],
